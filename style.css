@@ -1,0 +1,205 @@
+/***************************************************
+CSS Reset
+***************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/***************************************************
+Variables
+***************************************************/
+:root {
+  --primary-color: #0f1035;
+  --secondary-color: #ff6b6b;
+  --bg-color: #fafefd;
+  --text-color: #365486;
+  --hightlight2-color: #7fc7d9;
+}
+/***************************************************
+Global Styles
+***************************************************/
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--primary-color);
+}
+
+/***************************************************
+Project Styles
+***************************************************/
+.display-container {
+  position: relative;
+  width: 90vw;
+  height: 75px;
+  background: var(--bg-color);
+  border-radius: 18px;
+  padding: 28px 10px;
+  transition: 0.4s ease-out;
+  color: var(--text-color);
+  overflow: hidden;
+}
+
+.search-form {
+  width: 100%;
+  height: min-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-form .search-input {
+  width: 80%;
+  padding-left: 10px;
+  background: var(--bg-color);
+  border: 0;
+  outline: 0;
+  text-transform: uppercase;
+  color: var(--text-color);
+  font-size: 1.5rem;
+}
+
+.search-input::placeholder {
+  opacity: 0.6;
+}
+
+.search-form i {
+  cursor: pointer;
+  font-size: 22px;
+  background: transparent;
+  border: 0;
+  color: var(--text-color);
+}
+
+.submit-btn {
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+
+.submit-btn:hover {
+  scale: 1.5;
+  transition: 0.5s ease-out;
+}
+
+.error-display {
+  text-align: center;
+  margin-top: 50px;
+  scale: 0;
+  opacity: 0;
+  display: none;
+}
+
+.error-img {
+  width: 90%;
+}
+
+.weather-display {
+  text-align: center;
+}
+
+.weather-display img {
+  width: 50%;
+  margin-top: 20px;
+  animation: sway 5s infinite ease-in-out;
+}
+
+@keyframes sway {
+  0% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+.weather-display .temp {
+  font-size: 4rem;
+  position: relative;
+  font-weight: 500;
+}
+
+.temp .degrees {
+  font-size: 1rem;
+  position: absolute;
+  top: 10px;
+}
+
+.description {
+  font-size: 1.5rem;
+  margin-top: -10px;
+  font-weight: 500;
+}
+
+.details-display {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 2rem;
+}
+
+.text span {
+  font-size: 1.5rem;
+}
+
+.humidity,
+.wind {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.details-display i {
+  font-size: 2rem;
+  margin-right: 10px;
+}
+
+.fadeIn {
+  animation: 0.5s fadeIn forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+/***************************************************
+Project Styles
+***************************************************/
+@media screen and (min-width: 769px) {
+  .display-container {
+    width: 50vw;
+  }
+
+  .weather-display img {
+    width: 40%;
+  }
+
+  .error-img {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1441px) {
+  .display-container {
+    width: 35vw;
+  }
+
+  .weather-display img {
+    width: 35%;
+  }
+
+  .error-img {
+    width: 60%;
+  }
+}
